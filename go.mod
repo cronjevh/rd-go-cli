@@ -1,4 +1,4 @@
-module https: /github.com/cronjevh/rd-go-cli
+module https://github.com/cronjevh/rd-go-cli
 
 go 1.17
 
