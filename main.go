@@ -1,7 +1,7 @@
 package main
 
-import "github.com/cronjevh/rd-go-cli"
+import "https://github.com/cronjevh/rd-go-cli/cmd/rd"
 
 func main() {
-    rd.Execute()
+	rd.Execute()
 }
