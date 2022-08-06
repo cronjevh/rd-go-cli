@@ -7,8 +7,11 @@ import (
  "github.com/spf13/cobra"
 )
 
+var version = "0.0.1"
+
 var rootCmd = &cobra.Command{
     Use:  "rd",
+    Version: version,
     Short: "rd - a simple CLI to transform and inspect strings",
     Long: `rd is a super fancy CLI (kidding)
    
