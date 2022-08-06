@@ -54,7 +54,7 @@ func init() {
 func initConfig() {
 	if cfgFile != "" {
 		// Use config file from the flag.
-		viper.SetConfigFile(cfgFile)
+		viper.SetConfigFile(".env")
 	} else {
 		// Find home directory.
 		home, err := os.UserHomeDir()
