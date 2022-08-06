@@ -3,7 +3,7 @@ package rd
 import (
 	"fmt"
 
-	"https://github.com/cronjevh/rd-go-cli/pkg/rd"
+	"https:/github.com/cronjevh/rd-go-cli/pkg/rd"
 	"github.com/spf13/cobra"
 )
 
