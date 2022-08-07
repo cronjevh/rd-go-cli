@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/cronjevh/rd-go-cli/cmd/rd/flip"
 	"github.com/cronjevh/rd-go-cli/cmd/rd/incubator"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -52,12 +53,12 @@ func initConfig() {
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
-		fmt.Println("name:", viper.Get("username"))
 	}
 }
 
 func init() {
-	cobra.OnInitialize(initConfig)
+	initConfig()
+	cobra.OnInitialize()
 
 	// setDefaults()
 
@@ -67,9 +68,8 @@ func init() {
 	// Add my subcommand palette
 	// rootCmd.AddCommand(info.InfoCmd)
 	rootCmd.AddCommand(incubator.IncubatorCmd)
+	rootCmd.AddCommand(flip.FlipCmd)
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.toolbox.yaml)")
-
-	fmt.Println("name:", viper.Get("username"))
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
